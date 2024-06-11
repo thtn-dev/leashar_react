@@ -1,5 +1,7 @@
+import Header from '@/common/components/Header/Header';
+
 function Login() {
-    return ( <div>Login</div> );
+  return <Header></Header>;
 }
 
 export default Login;

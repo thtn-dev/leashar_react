@@ -1,23 +1,21 @@
-import { Suspense } from 'react'
+import { Suspense } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import 'sanitize.css/sanitize.css';
-import AuthModule from './modules/Auth';
+import AuthModule from '@/modules/Auth';
+
 const loading = <div>...loading</div>;
 function App() {
-
   return (
     <Suspense fallback={loading}>
       <BrowserRouter>
         <div className="App">
           <Routes>
-            <Route path="/auth/*" element={<AuthModule />}>
-            </Route>
+            <Route path="/auth/*" element={<AuthModule />}></Route>
             <Route path="*" element={<div>404</div>} />
           </Routes>
         </div>
       </BrowserRouter>
-    </Suspense> 
-  )
+    </Suspense>
+  );
 }
 
-export default App
+export default App;
