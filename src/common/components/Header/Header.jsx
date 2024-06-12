@@ -1,9 +1,7 @@
 import styles from './Header.module.scss';
-import clsx from 'clsx';
-
 function Header() {
   return (
-    <header className={clsx(styles.wrapper)}>
+    <header className={`${styles.wrapper}`}>
       <p>Header</p>
     </header>
   );

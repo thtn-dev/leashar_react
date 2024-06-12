@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
+import DefaultLayout from '@/common/layouts/DefaultLayout';
 import Login from './pages/Login';
-import DefaultLayout from '@/common/layouts/DefaultLayout/DefaultLayout';
 
 function AuthModule() {
   return (

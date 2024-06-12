@@ -1,6 +1,7 @@
 import { Container, ThemeProvider, createTheme } from '@mui/material';
 import PropTypes from 'prop-types';
 import styles from './Content.module.scss';
+
 Content.propTypes = {
   children: PropTypes.node.isRequired,
 };

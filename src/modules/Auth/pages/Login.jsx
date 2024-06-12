@@ -1,3 +1,4 @@
+import styles from './Login.module.scss';
 function Login() {
   return (
     <div
@@ -7,7 +8,7 @@ function Login() {
         backgroundColor: 'burlywood',
       }}
     >
-      <p style={{ padding: '0px' }}>Hello</p>
+      <p className={`${styles.abc}`}>Hello</p>
     </div>
   );
 }

@@ -1,7 +1,5 @@
-// import styles from './DefaultLayout.module.scss';
-
-import Content from '@/common/components/Content/Content';
 import Header from '@/common/components/Header/Header';
+import Content from '@/common/components/Content/Content';
 import PropTypes from 'prop-types';
 
 // import clsx from 'clsx';

@@ -9,16 +9,18 @@ export default defineConfig({
     alias: [
       // eslint-disable-next-line no-undef
       { find: '@', replacement: path.resolve(__dirname, 'src') },
-      // {
-      //   find: '@components',
-      //   // eslint-disable-next-line no-undef
-      //   replacement: path.resolve(__dirname, 'src/components'),
-      // },
-      // {
-      //   find: 'modules',
-      //   // eslint-disable-next-line no-undef
-      //   replacement: path.resolve(__dirname, 'src/modules'),
-      // },
     ],
+  },
+  css: {
+    modules: {
+      scopeBehaviour: 'local',
+      generateScopedName: '[name]__[local]--[hash:base64:5]',
+    },
+    devSourcemap: true,
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@import "./src/common/styles/_variable.scss";`,
+      },
+    },
   },
 });
