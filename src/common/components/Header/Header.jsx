@@ -4,7 +4,7 @@ import clsx from 'clsx';
 function Header() {
   return (
     <header className={clsx(styles.wrapper)}>
-      <h1>Header</h1>
+      <p>Header</p>
     </header>
   );
 }
