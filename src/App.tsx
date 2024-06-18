@@ -1,32 +1,35 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import './App.css';
-import { Test } from '@/common/utils/coreUtil';
+import { CssBaseline } from '@mui/material';
+import { withErrorHandler } from './common/error_handling';
+import AppErrorBoundaryFallback from './common/error_handling/App';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from './stores/store';
+import { decrement, increment, incrementByAmount } from '@/stores/features/counter';
 
 function App() {
-  const [count, setCount] = useState(0);
-  Test();
+  const count = useSelector((state: RootState) => state.counter.value);
+  const dispatch = useDispatch();
+
   return (
     <>
+      <CssBaseline />
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <div>
+          <button aria-label="Increment value" onClick={() => dispatch(increment())}>
+            +
+          </button>
+          <span>{count}</span>
+          <button aria-label="Decrement value" onClick={() => dispatch(decrement())}>
+            -
+          </button>
+        </div>
+        <div>
+          <button aria-label="Increment by amount" onClick={() => dispatch(incrementByAmount(5))}>
+            Increment by 5
+          </button>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount(count => count + 1)}>count is {count}</button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
     </>
   );
 }
 
-export default App;
+export default withErrorHandler(App, AppErrorBoundaryFallback);
