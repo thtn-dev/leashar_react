@@ -5,11 +5,11 @@ import Paper from '@mui/material/Paper';
 import { FullSizeCenteredFlexBox } from '@/common/components/styled';
 import styled from '@emotion/styled';
 
-const StyledFullsizeCenteredFlexBox = styled(FullSizeCenteredFlexBox)`
-  @media (max-width: 600px) {
-    padding: 8px;
-  }
-`;
+const StyledFullsizeCenteredFlexBox = styled(FullSizeCenteredFlexBox)({
+  '@media (max-width: 600px)': {
+    padding: '0.625rem',
+  },
+});
 
 function AppErrorBoundaryFallback() {
   return (
